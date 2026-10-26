@@ -1,0 +1,48 @@
+#!/bin/sh
+
+set -eu
+
+git diff --cached --diff-filter=AR --name-only |
+while IFS= read -r path; do
+    case "$path" in
+        .githooks/pre-commit|Cargo.toml|Cargo.lock|README|README.md|README.rst|README.txt|LICENSE|LICENSE.*|COPYING|COPYING.*|.gitignore|.gitattributes|.editorconfig|docs/THIRD_PARTY_LICENSES.md)
+            continue
+            ;;
+    esac
+
+    filename=${path##*/}
+    stem=${filename%.sha256.sig}
+    stem=${stem%.sha256}
+    stem=${stem%.sig}
+    stem=${stem%%.*}
+
+    case "$stem" in
+        QOSAMI?*)
+            service=${stem#QOSAMI}
+            length=${#service}
+            case "$service" in
+                *[!A-Z0-9]*|'')
+                    valid=false
+                    ;;
+                *)
+                    [ "$length" -le 6 ] && valid=true || valid=false
+                    ;;
+            esac
+            ;;
+        *)
+            valid=false
+            ;;
+    esac
+
+    if [ "$valid" != true ]; then
+        printf 'Commit blocked: new file "%s" must be named QOSAMI + 1-6 uppercase letters/digits (12-character stem max).\n' "$path" >&2
+        exit 1
+    fi
+done
+
+if git diff --cached -- kernel/src/fat32/mkfs.rs | grep -Eq '^\+\.{20,}//'; then
+    printf 'Commit blocked: staged mkfs.rs contains an anomalous long dot prefix; inspect and resolve it first.\n' >&2
+    exit 1
+fi
+
+exit 0

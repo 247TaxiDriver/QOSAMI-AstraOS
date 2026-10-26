@@ -187,6 +187,9 @@ docs/
 
 See [docs/roadmap.md](docs/roadmap.md) for details.
 
+See [docs/QOSAMIGUIDE.md](docs/QOSAMIGUIDE.md) for the QOSAMI artifact naming,
+local commit-signing, and hash-manifest verification workflow.
+
 ---
 
 ## License
