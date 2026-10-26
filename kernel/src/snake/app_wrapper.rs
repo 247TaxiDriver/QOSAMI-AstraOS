@@ -4,7 +4,8 @@ pub struct SnakeApp {
     inner: UnsafeCell<Game>,
 }
 
-// SAFETY: Astra OS is single-threaded (no SMP, no Send across threads).
+// SAFETY: Callers must serialize access to this interior-mutable state. SMP
+// safety has not been independently validated.
 unsafe impl Sync for SnakeApp {}
 
 impl SnakeApp {
@@ -15,8 +16,8 @@ impl SnakeApp {
     }
 
     fn g(&self) -> &mut Game {
-        // SAFETY: single-threaded; we never hold two &mut refs simultaneously.
+        // SAFETY: the desktop must ensure serialized access and must not retain
+        // another mutable reference to this state.
         unsafe { &mut *self.inner.get() }
     }
 }
-

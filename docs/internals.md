@@ -1,4 +1,4 @@
-# Astra OS — Internals Reference
+# SAMNAM OS — Internals Reference
 
 Technical notes for contributors. Covers decisions that aren't obvious from reading the code.
 
@@ -83,7 +83,8 @@ No raw kernel pointers are ever exposed to user space.
 ## Scheduler
 
 - Cooperative + PIT preemption (100 Hz tick → ~10 ms slices)
-- BSP-only scheduling; application processors complete their Limine bootstrap handshake and then park
+- SMP scheduler path initializes per-CPU state and releases application processors after boot probes
+- The latest `main` commit records QEMU validation with four CPUs; physical-hardware behavior remains unvalidated
 - Fixed-size task table (`MAX_TASKS`)
 - Task states: `Runnable`, `Blocked`, `Sleeping(wake_tick)`, `Terminated`
 - User tasks enter the same scheduler as kernel tasks; dispatch switches to ring 3 via `iretq` trampoline, returns through SYSCALL/exception
@@ -135,11 +136,17 @@ The order below matters — each step depends on the one above being stable.
 | Topic | Status |
 |---|---|
 | Physical hardware testing | Not done — QEMU only |
-| SMP / multi-core | Explicitly deferred |
-| APIC migration (from PIC/PIT) | Planned post-v0.1 |
-| Networking stack (ARP → TCP) | v0.2 target |
+| SMP / multi-core | Scheduler path implemented; QEMU validation is recorded in Git history; physical hardware not validated |
+| APIC migration (from PIC/PIT) | APIC/SMP code exists; physical-hardware validation pending |
+| Networking stack (ARP → TCP) | Implemented for the QEMU development path; real-NIC behavior not validated |
 | Dynamic ELF loading | Deferred — static only |
 | User-space libc / runtime | Deferred |
 | Secure boot / signing | Design placeholder only |
 | Multi-user / accounts | Deferred |
 | Package format | Deferred |
+
+### SMP safety caveat
+
+The SMP scheduler path is present, but Snake and Tetris retain interior-mutability
+code whose safety comments assume serialized callbacks. This document does not
+claim those paths have been independently audited for concurrent access.

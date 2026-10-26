@@ -1,12 +1,13 @@
 // ---------------------------------------------------------------------------
-// Astra OS — Snake  (built-in game, Phase 11 early gaming milestone)
+// SAMNAM OS — Snake  (built-in game, Phase 11 early gaming milestone)
 //
 // Classic snake game rendered entirely via the kernel framebuffer.
 // Controls: Arrow keys / WASD to steer, Space to pause, R to restart.
 // Speed increases every 5 points.  High score persists to FAT32.
 //
 // Interior mutability pattern: `render(&self)` advances the tick via a
-// raw-pointer cast — safe because Astra runs single-threaded on one core.
+// raw-pointer cast. Callers must serialize access; SMP safety has not been
+// independently validated.
 // ---------------------------------------------------------------------------
 
 use crate::app::{App, AppAction};

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — FAT32 read-only driver (Step 2)
+// SAMNAM OS — FAT32 read-only driver (Step 2)
 //
 // Mounts the first FAT32 partition found on the virtio-blk device.
 // Provides:

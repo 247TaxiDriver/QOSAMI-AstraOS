@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — IPv4
+// SAMNAM OS — IPv4
 //
 // Minimal IPv4: parse headers, build headers, checksum.
 //

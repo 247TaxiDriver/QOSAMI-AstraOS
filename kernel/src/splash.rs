@@ -1,4 +1,4 @@
-/// Astra OS boot splash screen.
+/// SAMNAM OS boot splash screen.
 /// Drawn once at boot, immediately after the framebuffer is available.
 use crate::framebuffer;
 
@@ -18,12 +18,12 @@ pub fn draw_boot_splash() {
 
     framebuffer::clear(BG);
 
-    // "ASTRA" — large title
+    // "SAMNAM" — large title
     let scale: usize = 5;
     let char_step = 6 * scale;
     let glyph_h = 7 * scale;
 
-    let title = "ASTRA";
+    let title = "SAMNAM";
     let title_px_w = title.len() * char_step;
 
     // "OS" at smaller scale, baseline-aligned

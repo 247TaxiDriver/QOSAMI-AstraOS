@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — Editor app  (polished v2, read-only viewer)
+// SAMNAM OS — Editor app  (polished v2, read-only viewer)
 //
 // Features:
 //   - Line-numbered text view with scrollbar

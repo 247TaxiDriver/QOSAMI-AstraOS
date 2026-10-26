@@ -1,4 +1,4 @@
-# Astra OS — Roadmap
+# SAMNAM OS — Roadmap
 
 ## v0.1 — Persistent Desktop ✅
 _Released May 2026_
@@ -35,8 +35,8 @@ _Released June 2026_
 
 ---
 
-## v0.3 — Stability & Hardware ✅
-_Completed June 2026_
+## v0.3 — Stability & SMP framework
+_QEMU validation is reported in Git history; physical hardware validation is pending._
 
 ### Phase 1: Memory Protection ✅ COMPLETE
 Foundation for safe user process isolation.
@@ -130,7 +130,7 @@ _Planned_
 
 ## Project Status
 
-**Current:** v0.3 Framework COMPLETE (Phase 1-3 ✅, Phase 4.1 ✅, Phase 5 📋)
+**Current:** v0.3 SMP/stability framework (Phases 1-3 reported complete; Phase 4 partial; Phase 5 hardware testing pending)
 
 **Completed Phases:**
 - Phase 0: Bootloader & Memory (100%)
@@ -142,14 +142,14 @@ _Planned_
 - Phase 4: USB HID (20% - Framework only, device enumeration pending)
 - Phase 5: Real Hardware Testing (0% - awaiting real hardware)
 
-**Build Status:** ✅ 0 errors, 810 KB kernel, production-ready for QEMU
+**Build Status:** QEMU build and validation results are recorded in project history; real-hardware validation remains pending. This is a development prototype, not a production-readiness claim.
 **Git:** All commits pushed to main branch
 
 ---
 
 ## Implementation Detail: v0.3 Architecture Summary
 
-v0.3 represents a complete, production-ready kernel architecture:
+This summary describes the implemented v0.3 architecture; it is not a production-readiness claim or independent hardware validation:
 
 `
 Bootloader (Limine)

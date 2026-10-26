@@ -129,12 +129,12 @@ fn render_input(cx: usize, cy: usize, cw: usize, _ch: usize, sel: usize) {
 fn render_about(cx: usize, cy: usize, cw: usize, _ch: usize) {
     let x = cx + PAD;
     let mut y = cy + PAD;
-    framebuffer::draw_text_scaled(x, y, "About Astra OS", HEADING, SC);
+    framebuffer::draw_text_scaled(x, y, "About SAMNAM OS", HEADING, SC);
     y += CH + 4;
     framebuffer::fill_rect(cx, y, cw, 1, SEP);
     y += 10;
     const LINES: &[(&str, u32)] = &[
-        ("Astra OS is a from-scratch Rust-first desktop", 0xE8F4FD),
+        ("SAMNAM OS is a from-scratch Rust-first desktop", 0xE8F4FD),
         ("operating system prototype focused on control,", 0xE8F4FD),
         ("privacy, simplicity, and eventually gaming-", 0xE8F4FD),
         ("capable personal computing.", 0xE8F4FD),

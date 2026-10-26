@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — Desktop Compositor  (v3 — App-trait windowing)
+// SAMNAM OS — Desktop Compositor  (v3 — App-trait windowing)
 //
 // Manages:
 //   - Taskbar (top)

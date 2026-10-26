@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — About Astra app
+// SAMNAM OS — About app
 //
 // A visually polished splash-style information panel showing the OS identity,
 // build metadata, and credits.  Read-only display; no editing.
@@ -44,7 +44,7 @@ struct Row {
 const INFO_ROWS: &[Row] = &[
     Row {
         label: "Version",
-        value: "Astra OS v0.3.0-dev",
+        value: "SAMNAM OS v0.3.0-dev",
     },
     Row {
         label: "Architecture",
@@ -84,7 +84,7 @@ const INFO_ROWS: &[Row] = &[
     },
     Row {
         label: "License",
-        value: "Proprietary — all rights reserved",
+        value: "GPL-3.0-or-later",
     },
 ];
 
@@ -103,7 +103,7 @@ impl AboutApp {
 // ── Rendering helpers ─────────────────────────────────────────────────────────
 
 fn draw_logo(cx: usize, cy: usize) {
-    // A stylised "A" star-glyph logo: two angled arms + crossbar + central star.
+    // A stylised star-glyph logo: two angled arms + crossbar + central star.
     // All coordinates relative to (cx, cy).
 
     // Background panel
@@ -133,7 +133,7 @@ fn draw_separator(cx: usize, y: usize, cw: usize) {
 
 impl App for AboutApp {
     fn title(&self) -> &str {
-        "About Astra OS"
+        "About SAMNAM OS"
     }
     fn app_id(&self) -> &'static str {
         "about"
@@ -159,7 +159,7 @@ impl App for AboutApp {
         draw_logo(cx + PAD_X, y);
 
         let title_x = cx + PAD_X + 90;
-        framebuffer::draw_text_scaled(title_x, y + 4, "ASTRA OS", TITLE_COL, 2);
+        framebuffer::draw_text_scaled(title_x, y + 4, "SAMNAM OS", TITLE_COL, 2);
         framebuffer::draw_text_at(title_x, y + 24, "v0.3.0-dev", VER_COL);
         framebuffer::draw_text_at(
             title_x,
@@ -223,7 +223,7 @@ impl App for AboutApp {
         framebuffer::draw_text_at(
             cx + PAD_X,
             y,
-            "github.com/astra-os  (coming soon)",
+            "github.com/247TaxiDriver/QOSAMI-AstraOS",
             LINK_COL,
         );
     }

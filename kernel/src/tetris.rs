@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — Tetris  (built-in game, Phase 11 gaming milestone)
+// SAMNAM OS — Tetris  (built-in game, Phase 11 gaming milestone)
 //
 // Classic Tetris with all 7 standard tetrominoes, hard/soft drop, hold,
 // next-piece preview, level scaling, and line-clear scoring.
@@ -14,7 +14,8 @@
 //   P / Space(game over) — pause
 //
 // Interior mutability pattern: `render(&self)` drives time-based gravity
-// via a raw-pointer cast — safe in Astra's single-threaded kernel context.
+// via a raw-pointer cast. Callers must serialize access; SMP safety has not
+// been independently validated.
 // ---------------------------------------------------------------------------
 
 use crate::app::{App, AppAction};
