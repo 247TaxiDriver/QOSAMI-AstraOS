@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — Settings app
+// SAMNAM OS — Settings app
 //
 // Multi-tab layout:
 //   [System]  — hardware/build info  (read-only)
@@ -58,7 +58,7 @@ struct KV {
 const SYSINFO: [KV; NUM_SYSINFO] = [
     KV {
         k: "Version",
-        v: "Astra OS v0.1",
+        v: "SAMNAM OS v0.3.0-dev",
     },
     KV {
         k: "Architecture",

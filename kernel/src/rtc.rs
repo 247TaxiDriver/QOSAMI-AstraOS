@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — Real-Time Clock driver (CMOS/RTC)
+// SAMNAM OS — Real-Time Clock driver (CMOS/RTC)
 //
 // Reads the x86_64 CMOS real-time clock via I/O ports 0x70 (address) and
 // 0x71 (data).  Values are BCD-encoded by default; this module decodes them

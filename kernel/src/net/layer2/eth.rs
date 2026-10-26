@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — Ethernet frame layer
+// SAMNAM OS — Ethernet frame layer
 //
 // Ethernet II frame:
 //   [0..5]   destination MAC

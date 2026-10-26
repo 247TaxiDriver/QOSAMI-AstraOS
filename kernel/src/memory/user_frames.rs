@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — Per-process owned user-leaf frame tracking.
+// SAMNAM OS — Per-process owned user-leaf frame tracking.
 //
 // Records the physical frames allocated specifically for a user process
 // (ELF code/data pages, user stack, etc.) so they can be reclaimed when the

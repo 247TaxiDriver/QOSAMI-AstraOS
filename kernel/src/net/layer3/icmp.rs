@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — ICMP (Internet Control Message Protocol)
+// SAMNAM OS — ICMP (Internet Control Message Protocol)
 //
 // RFC 792 — handles echo request/reply (ping).
 //

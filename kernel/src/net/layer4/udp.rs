@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — UDP
+// SAMNAM OS — UDP
 //
 // UDP datagram header (8 bytes, RFC 768):
 //   [0..1] source port

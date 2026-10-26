@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — Log Viewer app
+// SAMNAM OS — Log Viewer app
 //
 // Displays the kernel serial log ring buffer in real time.  Entries are
 // captured from every `serial::write_line` / `serial::write_str` call across

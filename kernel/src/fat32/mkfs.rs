@@ -1,4 +1,4 @@
-// ── FAT32 mkfs ────────────────────────────────────────────────────────────────
+........................................................................................................................................................................................// ── FAT32 mkfs ────────────────────────────────────────────────────────────────
 
 /// Write a minimal FAT32 filesystem to the raw virtio-blk device.
 /// Assumes a 64 MiB device (131072 × 512-byte sectors).
@@ -68,12 +68,12 @@ pub fn mkfs() -> bool {
     vbr[64] = 0x80; // drive number
     vbr[66] = 0x29; // extended boot signature
                     // Volume ID (dummy 4 bytes)
-    vbr[67] = 0x41;
-    vbr[68] = 0x53;
-    vbr[69] = 0x54;
-    vbr[70] = 0x52;
+    vbr[67] = 0x53;
+    vbr[68] = 0x41;
+    vbr[69] = 0x4D;
+    vbr[70] = 0x4E;
     // Volume label (11 bytes)
-    vbr[71..82].copy_from_slice(b"ASTRA OS   ");
+    vbr[71..82].copy_from_slice(b"SAMNAM OS  ");
     // FS type string (8 bytes)
     vbr[82..90].copy_from_slice(b"FAT32   ");
     // Boot signature

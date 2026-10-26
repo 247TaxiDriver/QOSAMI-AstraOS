@@ -164,7 +164,7 @@ impl Desktop {
         framebuffer::fill_rect(r.x + r.w - 1, r.y, 1, r.h, LAUNCHER_BORD);
         framebuffer::fill_rect(0, BAR_H, LAUNCHER_W, LAUNCHER_HEAD_H, LAUNCHER_HEAD);
         framebuffer::fill_rect(0, BAR_H + LAUNCHER_HEAD_H - 1, LAUNCHER_W, 1, LAUNCHER_SEP);
-        framebuffer::draw_text_scaled(LAUNCHER_PAD_X, BAR_H + 10, "ASTRA OS", LAUNCHER_TEXT, 2);
+        framebuffer::draw_text_scaled(LAUNCHER_PAD_X, BAR_H + 10, "SAMNAM OS", LAUNCHER_TEXT, 2);
         framebuffer::draw_text_at(
             LAUNCHER_PAD_X,
             BAR_H + LAUNCHER_HEAD_H - 12,

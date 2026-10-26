@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — Terminal window client
+// SAMNAM OS — Terminal window client
 //
 // Pure content renderer + input handler.  The desktop compositor owns the
 // window chrome, cursor, and presentation.  This module only:
@@ -29,7 +29,7 @@ const CHAR_W: usize = 6 * SCALE; // 12
 const CHAR_H: usize = 8 * SCALE; // 16 (7px glyph * 2 + 2px line gap)
 const PAD_X: usize = 10;
 
-const PROMPT: &str = "astra$ ";
+const PROMPT: &str = "samnam$ ";
 
 // ── Storage ───────────────────────────────────────────────────────────────────
 
@@ -176,7 +176,7 @@ pub fn init_if_needed() {
     let mut t = TERM.lock();
     if !t.inited {
         t.inited = true;
-        t.push_str("Astra OS  Terminal  v0.1", TEXT_NORM);
+        t.push_str("SAMNAM OS  Terminal  v0.3.0-dev", TEXT_NORM);
         t.push_str("Type 'help' for commands.  ESC to close.", TEXT_NORM);
         t.push_str("", TEXT_NORM);
     }

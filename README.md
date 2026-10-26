@@ -1,8 +1,8 @@
-# Astra OS
+# SAMNAM OS
 
 A from-scratch desktop operating system written entirely in Rust — `no_std`, bare-metal x86_64 — with a graphical desktop, real filesystem persistence, user processes, and a growing set of built-in apps.
 
-> **Astra OS is a from-scratch Rust-first desktop OS prototype focused on control, privacy, and simplicity.**
+> **SAMNAM OS is a from-scratch Rust-first desktop OS prototype focused on control, privacy, and simplicity.**
 
 ---
 
@@ -26,6 +26,7 @@ A from-scratch desktop operating system written entirely in Rust — `no_std`, b
 | Ring-3 user processes — ELF64 loader, SYSCALL dispatch, `exec`/`ps`/`kill` | ✅ |
 | Custom `no_std` heap allocator | ✅ |
 | x86_64 — PIC, PIT timer, PS/2 keyboard, serial mouse, UEFI boot via Limine | ✅ |
+| SMP scheduler — four-CPU QEMU validation reported in Git history; hardware validation pending | Implemented |
 
 ---
 
@@ -132,9 +133,9 @@ Open the Terminal app from the launcher (bottom bar) or double-click its desktop
 ### Limitations
 
 - Runs in QEMU only (x86_64 + OVMF). Physical hardware not tested.
-- Application processors start and complete their bootstrap handshake in QEMU, but remain parked; scheduling is still BSP-only.
+- SMP scheduling is implemented. The latest `main` commit reports QEMU validation with four CPUs; real-hardware validation has not been documented.
 - Ring-3 user programs are hand-assembled ELF stubs, not compiled from C/Rust.
-- No audio, no USB, no GPU acceleration.
+- No audio, no working USB device enumeration, no GPU acceleration.
 
 ---
 
@@ -182,7 +183,7 @@ docs/
 |---|---|
 | v0.1 — Persistent desktop, full app suite, user processes | ✅ Done |
 | v0.2 — ARP → IPv4 → ICMP → UDP → DNS → TCP → HTTP GET | ✅ Done |
-| v0.3 — Physical hardware, multi-core | In progress|
+| v0.3 — SMP scheduler and USB HID framework | Framework complete; USB enumeration and real-hardware validation remain pending |
 
 See [docs/roadmap.md](docs/roadmap.md) for details.
 
@@ -190,4 +191,6 @@ See [docs/roadmap.md](docs/roadmap.md) for details.
 
 ## License
 
-Proprietary — all rights reserved.
+SAMNAM OS is licensed under the GNU General Public License, version 3 or (at your
+option) any later version. See [LICENSE](LICENSE). Third-party components retain
+their own licenses; see [docs/THIRD_PARTY_LICENSES.md](docs/THIRD_PARTY_LICENSES.md).

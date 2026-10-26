@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — DNS (Domain Name System) client
+// SAMNAM OS — DNS (Domain Name System) client
 //
 // RFC 1035 — sends a single A-record (IPv4) query to QEMU's slirp DNS
 // forwarder at 10.0.2.3:53 and parses the response.

@@ -17,7 +17,8 @@ impl App for TetrisApp {
     }
 
     fn render(&self, cx: usize, cy: usize, cw: usize, ch: usize) {
-        // Advance game logic via interior-mutability cast (single-threaded kernel).
+        // Advance game logic via interior-mutability cast. Callers must serialize
+        // access; SMP safety has not been independently validated.
         let s = unsafe { &mut *self.inner.get() };
         s.tick();
 
@@ -231,4 +232,3 @@ impl App for TetrisApp {
         AppAction::RedrawAll
     }
 }
-

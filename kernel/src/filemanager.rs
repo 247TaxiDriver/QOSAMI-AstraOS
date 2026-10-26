@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — File Manager app  (polished v2)
+// SAMNAM OS — File Manager app  (polished v2)
 //
 // Features:
 //   - Full directory listing with name + size columns

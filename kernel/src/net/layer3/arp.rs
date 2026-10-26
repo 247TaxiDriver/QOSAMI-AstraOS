@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Astra OS — ARP (Address Resolution Protocol)
+// SAMNAM OS — ARP (Address Resolution Protocol)
 //
 // RFC 826 — IPv4 over Ethernet.
 //
