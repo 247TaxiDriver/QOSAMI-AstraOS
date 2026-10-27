@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — Notes app
+// QOSAMI OS — Notes app
 //
 // A simple scratchpad that auto-saves to FAT32 as "notes.txt" in the root.
 // The first open creates the file if it does not exist; subsequent opens load

@@ -10,6 +10,7 @@ mod acpi;
 mod app;
 mod arch;
 mod boot;
+mod branding;
 mod calculator;
 mod console;
 mod desktop;
@@ -60,13 +61,13 @@ pub extern "C" fn kmain() -> ! {
     arch::x86_64::cpu::early_init();
 
     serial::init();
-    console::log("kernel: boot entry reached");
-    console::log("kernel: phase E1 skeleton active");
+    console::log("qosami-core: boot entry reached");
+    console::log("qosami-core: phase E1 skeleton active");
 
     {
         let cr0 = arch::x86_64::cpu::cr0();
         let cr4 = arch::x86_64::cpu::cr4();
-        serial::write_str("kernel: protections WP=");
+        serial::write_str("qosami-core: protections WP=");
         serial::write_u64(((cr0 >> 16) & 1) as u64);
         serial::write_str(" SMEP=");
         serial::write_u64(((cr4 >> 20) & 1) as u64);
@@ -85,7 +86,7 @@ pub extern "C" fn kmain() -> ! {
 
     arch::x86_64::apic::log_summary();
     if !boot::protocol::limine_revision_supported() {
-        console::log("kernel: unsupported limine revision");
+        console::log("qosami-core: unsupported limine revision");
         arch::x86_64::halt::halt_loop();
     }
 
@@ -124,12 +125,10 @@ pub extern "C" fn kmain() -> ! {
     drivers::virtio_net::init();
     // Bring up IP stack (static QEMU config: 10.0.2.15/24, gw 10.0.2.2)
     net::init();
-    // Mount FAT32 filesystem; format on first boot if blank
+    // Never format automatically: a mount failure can indicate an existing or
+    // damaged filesystem, and formatting would destroy its contents.
     if !fat32::mount() && drivers::virtio_blk::sector_count() > 0 {
-        crate::serial::write_line("fat32: blank disk detected, running mkfs...");
-        if fat32::mkfs() {
-            fat32::mount();
-        }
+        crate::serial::write_line("fat32: mount failed; automatic formatting disabled");
     }
 
     // Boot splash (presented immediately)
@@ -171,4 +170,3 @@ pub extern "C" fn kmain() -> ! {
 fn panic(info: &PanicInfo<'_>) -> ! {
     panic::handle(info)
 }
-

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — ARP (Address Resolution Protocol)
+// QOSAMI Core — ARP (Address Resolution Protocol)
 //
 // RFC 826 — IPv4 over Ethernet.
 //

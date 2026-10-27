@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — Terminal window client
+// QOSAMI OS — Terminal window client
 //
 // Pure content renderer + input handler.  The desktop compositor owns the
 // window chrome, cursor, and presentation.  This module only:
@@ -176,7 +176,7 @@ pub fn init_if_needed() {
     let mut t = TERM.lock();
     if !t.inited {
         t.inited = true;
-        t.push_str("SAMNAM OS  Terminal  v0.3.0-dev", TEXT_NORM);
+        t.push_str(crate::branding::TERMINAL_BANNER, TEXT_NORM);
         t.push_str("Type 'help' for commands.  ESC to close.", TEXT_NORM);
         t.push_str("", TEXT_NORM);
     }

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — Snake  (built-in game, Phase 11 early gaming milestone)
+// QOSAMI OS — Snake  (built-in game, Phase 11 early gaming milestone)
 //
 // Classic snake game rendered entirely via the kernel framebuffer.
 // Controls: Arrow keys / WASD to steer, Space to pause, R to restart.

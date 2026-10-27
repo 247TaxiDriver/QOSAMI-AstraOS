@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — Calculator app
+// QOSAMI OS — Calculator app
 //
 // A simple integer/decimal four-function calculator.  Mouse clicks on the
 // button grid and keyboard input (digits, operators, Enter/=, Backspace, Esc)

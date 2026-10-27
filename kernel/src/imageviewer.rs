@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — Image Viewer app
+// QOSAMI OS — Image Viewer app
 //
 // Loads and displays PPM P6 (binary RGB) image files from the VFS / FAT32.
 //

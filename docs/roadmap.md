@@ -1,4 +1,4 @@
-# SAMNAM OS — Roadmap
+# QOSAMI OS — Roadmap
 
 ## v0.1 — Persistent Desktop ✅
 _Released May 2026_

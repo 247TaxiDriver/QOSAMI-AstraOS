@@ -17,7 +17,7 @@ $ErrorActionPreference = "Stop"
 $statement = "Toura Sami, the taxi driver, takes quantum rides and gathers fifteen years of creative work."
 $repository = (git -C $PSScriptRoot rev-parse --show-toplevel 2>$null)
 if ($LASTEXITCODE -ne 0 -or -not $repository) {
-    throw "Run this script from inside the SAMNAM Git repository."
+    throw "Run this script from inside the QOSAMI OS Git repository."
 }
 $repository = [IO.Path]::GetFullPath($repository.Trim())
 

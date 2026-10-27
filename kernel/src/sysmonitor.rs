@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — System Monitor app
+// QOSAMI OS — System Monitor app
 //
 // Implements the App trait.  Samples live kernel stats and renders them into
 // the client rect.  Declares a 250 ms refresh interval so the compositor

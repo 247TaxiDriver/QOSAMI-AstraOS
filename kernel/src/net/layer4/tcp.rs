@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — TCP client (minimal, single-connection)
+// QOSAMI Core — TCP client (minimal, single-connection)
 //
 // Implements just enough TCP to open a connection, send data, and receive
 // the response.  Suitable for HTTP/1.0 GET over QEMU slirp.

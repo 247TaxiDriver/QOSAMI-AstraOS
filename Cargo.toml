@@ -4,6 +4,7 @@ resolver = "2"
 
 [workspace.package]
 edition = "2021"
+description = "QOSAMI OS workspace with the QOSAMI Core bare-metal kernel"
 license = "GPL-3.0-or-later"
 version = "0.3.0-dev"
 

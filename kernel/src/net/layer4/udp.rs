@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — UDP
+// QOSAMI Core — UDP
 //
 // UDP datagram header (8 bytes, RFC 768):
 //   [0..1] source port

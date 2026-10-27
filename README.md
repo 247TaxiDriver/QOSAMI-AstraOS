@@ -1,8 +1,8 @@
-# SAMNAM OS
+# QOSAMI OS
 
 A from-scratch desktop operating system written entirely in Rust — `no_std`, bare-metal x86_64 — with a graphical desktop, real filesystem persistence, user processes, and a growing set of built-in apps.
 
-> **SAMNAM OS is a from-scratch Rust-first desktop OS prototype focused on control, privacy, and simplicity.**
+> **QOSAMI OS is a from-scratch Rust-first desktop OS prototype focused on control, privacy, and simplicity. Its bare-metal kernel layer is QOSAMI Core.**
 
 ---
 
@@ -56,9 +56,9 @@ archive when it is missing.
 ### Build
 
 ```powershell
-cargo build
+cargo build -p qosami-core
 # or
-cargo build --release
+cargo build -p qosami-core --release
 ```
 
 ### Run in QEMU
@@ -74,13 +74,38 @@ cargo build --release
 .\scripts\run-qemu.ps1 -TimeoutSeconds 30 -LogPath build/boot.log
 ```
 
+### Build a UEFI DVD ISO on Linux
+
+The repository does not publish a prebuilt ISO. On AlmaLinux 9, install the
+build tools with `sudo dnf install -y cargo xorriso unzip coreutils` and ensure
+the configured Rust nightly toolchain with `rust-src` is available. From a
+Linux checkout of this repository, run:
+
+```bash
+bash scripts/build-iso.sh
+```
+
+The script writes `build/QOSAMI-OS-x86_64.iso`, verifies that xorriso reports a
+UEFI boot entry, and prints its SHA-256. It does not burn media. This is a
+bootable prototype image, not a graphical installer and not an installation
+alongside Windows. Test it in QEMU before burning it to DVD. After the ISO is
+built in the Windows-mounted checkout, open its location with:
+
+```powershell
+explorer.exe /select,"C:\QOSAMI_VIRTUAL\QOSAMI-AstraOS\build\QOSAMI-OS-x86_64.iso"
+```
+
+In Explorer, right-click the ISO, choose **Burn disc image**, verify the
+selected optical drive, then start the burn. Do not use a raw-disk formatter;
+the ISO is written as an optical image.
+
 Run the consolidated two-core GUI and boot-contract validation with:
 
 ```powershell
 .\scripts\validate-poste14-gui.ps1
 ```
 
-`build/disk.img` (64 MiB FAT32) persists between runs. Delete it to get a fresh volume — it is auto-formatted on first boot.
+`build/disk.img` (64 MiB FAT32) persists between runs. A FAT32 mount failure is reported but never triggers automatic formatting; `mkfs` is destructive and must only be invoked through an explicit, reviewed format flow.
 
 ---
 
@@ -124,7 +149,7 @@ Open the Terminal app from the launcher (bottom bar) or double-click its desktop
 
 - **No standard library** — `#![no_std]` throughout; no libc, no OS calls.
 - **Software renderer** — writes directly to the Limine linear framebuffer; no GPU required.
-- **FAT32** — 64 MiB raw `disk.img` over virtio-blk; LFN chains (up to 65-char names); auto-formatted on first boot. Desktop icon positions saved in `Desktop/DESKSTAT`.
+- **FAT32** — 64 MiB raw `disk.img` over virtio-blk; LFN chains (up to 65-char names). A mount failure does not format the disk. Desktop icon positions saved in `Desktop/DESKSTAT`.
 - **VFS** — static node tree plus FAT32 backend; all apps share `fs::open` / `fs::read` / `fs::write`.
 - **Networking** — virtio-net with ARP, IPv4, ICMP, UDP, DNS, TCP, and HTTP support.
 - **User processes** — ELF64 loader maps PT_LOAD segments into ring-3 page tables; SYSCALL/SYSRET; SysV AMD64 ABI.
@@ -194,6 +219,6 @@ local commit-signing, and hash-manifest verification workflow.
 
 ## License
 
-SAMNAM OS is licensed under the GNU General Public License, version 3 or (at your
+QOSAMI OS is licensed under the GNU General Public License, version 3 or (at your
 option) any later version. See [LICENSE](LICENSE). Third-party components retain
 their own licenses; see [docs/THIRD_PARTY_LICENSES.md](docs/THIRD_PARTY_LICENSES.md).

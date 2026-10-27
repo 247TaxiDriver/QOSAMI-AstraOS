@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — Ethernet frame layer
+// QOSAMI Core — Ethernet frame layer
 //
 // Ethernet II frame:
 //   [0..5]   destination MAC

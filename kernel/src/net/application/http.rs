@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — HTTP/1.0 GET client
+// QOSAMI Core — HTTP/1.0 GET client
 //
 // Sends a single HTTP/1.0 GET request over TCP and reads the response.
 // HTTP/1.0 has no keep-alive so the server closes after the response —

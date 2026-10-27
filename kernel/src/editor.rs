@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — Editor app  (polished v2, read-only viewer)
+// QOSAMI OS — Editor app  (polished v2, read-only viewer)
 //
 // Features:
 //   - Line-numbered text view with scrollbar

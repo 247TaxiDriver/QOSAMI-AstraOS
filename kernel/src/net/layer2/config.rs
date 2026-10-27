@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — IP configuration
+// QOSAMI Core — IP configuration
 //
 // Static IP for QEMU user-mode networking:
 //   Guest:   10.0.2.15 / 255.255.255.0

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — virtio-net driver (legacy PCI, polling, IPv4/UDP capable)
+// QOSAMI Core — virtio-net driver (legacy PCI, polling, IPv4/UDP capable)
 //
 // Uses the same legacy virtio-over-PCI-I/O-BAR approach as virtio_blk.
 // Queue 0 = RX (device → driver), Queue 1 = TX (driver → device).

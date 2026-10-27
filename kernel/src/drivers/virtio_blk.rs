@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — virtio-blk driver (legacy PCI, read-only, Step 1)
+// QOSAMI Core — virtio-blk driver (legacy PCI, read-only, Step 1)
 //
 // Detects the virtio-blk device in QEMU via PCI config space, initialises
 // the virtio legacy interface, and exposes a single `read_sector()` call.

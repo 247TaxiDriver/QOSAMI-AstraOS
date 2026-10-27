@@ -9,11 +9,14 @@
   "linker": "rust-lld",
   "llvm-target": "x86_64-unknown-none",
   "metadata": {
-    "description": "Custom target for the OS kernel"
+    "owner": "Toura Sami",
+    "operator": "Toura-Sami",
+    "description": "Bare-metal x86_64 target for QOSAMI Core"
   },
   "panic-strategy": "abort",
   "position-independent-executables": false,
   "relocation-model": "static",
+  "target-c-int-width": "32",
   "target-endian": "little",
   "target-pointer-width": 64
 }

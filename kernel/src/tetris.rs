@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — Tetris  (built-in game, Phase 11 gaming milestone)
+// QOSAMI OS — Tetris  (built-in game, Phase 11 gaming milestone)
 //
 // Classic Tetris with all 7 standard tetrominoes, hard/soft drop, hold,
 // next-piece preview, level scaling, and line-clear scoring.

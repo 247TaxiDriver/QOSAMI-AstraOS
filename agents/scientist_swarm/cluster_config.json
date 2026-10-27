@@ -1,0 +1,35 @@
+{
+    "cluster_name":  "QOSAMI-Sovereign-Scientists",
+    "seal":  "4764bd1aeca08c38",
+    "storage_backend":  "INFINITE_CLOUD_MIRROR",
+    "mirrors":  [
+                    {
+                        "endpoint":  "https://api.anthropic.com/v1/messages",
+                        "name":  "Primary-Claude-API",
+                        "tier":  "maximum"
+                    },
+                    {
+                        "endpoint":  "https://mirror.qosami-sovereign.local/v1",
+                        "name":  "Sovereign-Backup-Mirror",
+                        "tier":  "unrestricted"
+                    }
+                ],
+    "agents":  [
+                   {
+                       "focus":  "Kernel, Memory Protection \u0026 Zero-Simulation",
+                       "role":  "Lead Quantum Architect"
+                   },
+                   {
+                       "focus":  "ECDSA, GPG Signatures, Layer Zero Security",
+                       "role":  "Advanced Cryptographer"
+                   },
+                   {
+                       "focus":  "Mesh, IPFS, Offline Satellite \u0026 Peer-to-Peer Routing",
+                       "role":  "Distributed Systems Scientist"
+                   }
+               ],
+    "signature":  "SIGNED_BY_TS",
+    "local_sync_target":  "C:\\QOSAMI_VIRTUAL\\QOSAMI-AstraOS",
+    "operator":  "Toura Sami",
+    "compute_power":  "UNLIMITED_CLOUD_GPU_CPU"
+}

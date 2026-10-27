@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — App interface
+// QOSAMI Core — App interface
 //
 // Every windowed application implements the App trait.  The desktop
 // compositor owns windows and delegates title, sizing, rendering, input, and

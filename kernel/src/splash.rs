@@ -1,4 +1,4 @@
-/// SAMNAM OS boot splash screen.
+/// QOSAMI OS boot splash screen.
 /// Drawn once at boot, immediately after the framebuffer is available.
 use crate::framebuffer;
 
@@ -18,12 +18,21 @@ pub fn draw_boot_splash() {
 
     framebuffer::clear(BG);
 
-    // "SAMNAM" — large title
+    // Draw the QOSAMI mark and wordmark using the framebuffer primitives.
+    let logo_x = w.saturating_sub(52) / 2;
+    let logo_y = h.saturating_sub(190) / 2;
+    framebuffer::fill_rect(logo_x, logo_y, 52, 52, RULE);
+    framebuffer::fill_rect(logo_x + 4, logo_y + 4, 44, 44, BG);
+    framebuffer::fill_rect(logo_x + 11, logo_y + 11, 30, 30, ACCENT);
+    framebuffer::fill_rect(logo_x + 16, logo_y + 16, 20, 20, BG);
+    framebuffer::fill_rect(logo_x + 28, logo_y + 29, 13, 5, ACCENT);
+    framebuffer::fill_rect(logo_x + 36, logo_y + 34, 5, 10, ACCENT);
+
     let scale: usize = 5;
     let char_step = 6 * scale;
     let glyph_h = 7 * scale;
 
-    let title = "SAMNAM";
+    let title = crate::branding::PRODUCT_WORDMARK;
     let title_px_w = title.len() * char_step;
 
     // "OS" at smaller scale, baseline-aligned
@@ -34,7 +43,7 @@ pub fn draw_boot_splash() {
     let total_w = title_px_w + gap + os_px_w;
 
     let block_x = w.saturating_sub(total_w) / 2;
-    let block_y = h.saturating_sub(glyph_h + 60) / 2;
+    let block_y = logo_y + 64;
 
     framebuffer::draw_text_scaled(block_x, block_y, title, TITLE, scale);
 
@@ -47,7 +56,8 @@ pub fn draw_boot_splash() {
     framebuffer::fill_rect(block_x, rule_y, total_w, 1, RULE);
 
     // Subtitle
-    framebuffer::draw_text_at(block_x, rule_y + 8, "Loading system...", SUBTITLE);
+    framebuffer::draw_text_at(block_x, rule_y + 8, crate::branding::CORE_NAME, SUBTITLE);
+    framebuffer::draw_text_at(block_x, rule_y + 20, "Starting system...", SUBTITLE);
 
     // Present the composed splash to screen
     framebuffer::present_full();

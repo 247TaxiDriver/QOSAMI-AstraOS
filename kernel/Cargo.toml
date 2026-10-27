@@ -1,8 +1,13 @@
 [package]
-name = "kernel"
+name = "qosami-core"
 version.workspace = true
 edition = "2021"
+description.workspace = true
 license.workspace = true
+
+[[bin]]
+name = "kernel"
+path = "src/main.rs"
 
 [features]
 default = []

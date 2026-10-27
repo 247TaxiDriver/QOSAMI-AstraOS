@@ -23,9 +23,9 @@ if ($CargoFeatures.Count -gt 0) {
 }
 
 if ($Profile -eq "release") {
-    cargo build -Z build-std=core,alloc -p kernel --release @featureArgs
+    cargo build -Z build-std=core,alloc -p qosami-core --release @featureArgs
 } else {
-    cargo build -Z build-std=core,alloc -p kernel @featureArgs
+    cargo build -Z build-std=core,alloc -p qosami-core @featureArgs
 }
 
 if ($LASTEXITCODE -ne 0) {

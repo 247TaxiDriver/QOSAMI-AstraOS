@@ -1,4 +1,4 @@
-# SAMNAM OS — Internals Reference
+# QOSAMI Core — Internals Reference
 
 Technical notes for contributors. Covers decisions that aren't obvious from reading the code.
 

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — About app
+// QOSAMI OS — About app
 //
 // A visually polished splash-style information panel showing the OS identity,
 // build metadata, and credits.  Read-only display; no editing.
@@ -44,7 +44,7 @@ struct Row {
 const INFO_ROWS: &[Row] = &[
     Row {
         label: "Version",
-        value: "SAMNAM OS v0.3.0-dev",
+        value: crate::branding::PRODUCT_VERSION,
     },
     Row {
         label: "Architecture",
@@ -133,7 +133,7 @@ fn draw_separator(cx: usize, y: usize, cw: usize) {
 
 impl App for AboutApp {
     fn title(&self) -> &str {
-        "About SAMNAM OS"
+        "About QOSAMI OS"
     }
     fn app_id(&self) -> &'static str {
         "about"
@@ -159,12 +159,18 @@ impl App for AboutApp {
         draw_logo(cx + PAD_X, y);
 
         let title_x = cx + PAD_X + 90;
-        framebuffer::draw_text_scaled(title_x, y + 4, "SAMNAM OS", TITLE_COL, 2);
-        framebuffer::draw_text_at(title_x, y + 24, "v0.3.0-dev", VER_COL);
+        framebuffer::draw_text_scaled(
+            title_x,
+            y + 4,
+            crate::branding::PRODUCT_NAME,
+            TITLE_COL,
+            2,
+        );
+        framebuffer::draw_text_at(title_x, y + 24, crate::branding::VERSION_LABEL, VER_COL);
         framebuffer::draw_text_at(
             title_x,
             y + 38,
-            "A from-scratch Rust desktop OS",
+            crate::branding::CORE_NAME,
             TAGLINE_COL,
         );
         framebuffer::draw_text_at(

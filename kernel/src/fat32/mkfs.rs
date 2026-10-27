@@ -73,7 +73,7 @@ pub fn mkfs() -> bool {
     vbr[69] = 0x4D;
     vbr[70] = 0x4E;
     // Volume label (11 bytes)
-    vbr[71..82].copy_from_slice(b"SAMNAM OS  ");
+    vbr[71..82].copy_from_slice(b"QOSAMI OS  ");
     // FS type string (8 bytes)
     vbr[82..90].copy_from_slice(b"FAT32   ");
     // Boot signature

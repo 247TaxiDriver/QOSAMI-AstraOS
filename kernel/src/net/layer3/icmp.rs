@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — ICMP (Internet Control Message Protocol)
+// QOSAMI Core — ICMP (Internet Control Message Protocol)
 //
 // RFC 792 — handles echo request/reply (ping).
 //

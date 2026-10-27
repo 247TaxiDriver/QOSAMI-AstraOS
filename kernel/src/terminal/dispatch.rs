@@ -105,7 +105,7 @@ fn run_cmd(cmd: &str, args: &str) {
 
         "version" => {
             let mut t = TERM.lock();
-            t.push_str("SAMNAM OS  v0.3.0-dev", TEXT_NORM);
+            t.push_str(crate::branding::PRODUCT_VERSION, TEXT_NORM);
             t.push_str("Kernel: Rust no_std / UEFI / x86_64", TEXT_NORM);
             t.push_str("Build:  April 2026", TEXT_NORM);
         }

@@ -1,0 +1,26 @@
+{
+    "metadata":  {
+                     "sovereign_architecture":  "QOSAMI-Toura-Sami (Layer Zero Master Root)",
+                     "description":  "Toura Sami absolute owner target for SAMNAM OS / QOSami kernel",
+                     "owner":  "Toura Sami",
+                     "signature":  "SIGNED_BY_TS-Toura-Sami",
+                     "operator":  "Toura-Sami",
+                     "seal":  "4764bd1aeca08c38"
+                 },
+    "position-independent-executables":  false,
+    "llvm-target":  "x86_64-qosami-terminal",
+    "cpu":  "Toura-Sami-Master",
+    "executables":  true,
+    "panic-strategy":  "abort",
+    "data-layout":  "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-f80:128-n8:16:32:64-S128",
+    "target-pointer-width":  "64",
+    "disable-redzone":  true,
+    "target-endian":  "little",
+    "linker":  "rust-lld",
+    "arch":  "x86_64",
+    "relocation-model":  "static",
+    "features":  "-mmx,-sse,-sse2,-avx,-avx2",
+    "os":  "QOSami-Toura Evm",
+    "linker-flavor":  "ld.lld",
+    "target-c-int-width":  "32"
+}

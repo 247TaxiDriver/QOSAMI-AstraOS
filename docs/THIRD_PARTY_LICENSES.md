@@ -1,6 +1,6 @@
 # Third-party licenses
 
-SAMNAM OS project code is licensed under GPL-3.0-or-later. Third-party
+QOSAMI OS and QOSAMI Core project code are licensed under GPL-3.0-or-later. Third-party
 components keep their original licenses; this file does not relicense them.
 
 ## Rust crates in `Cargo.lock`

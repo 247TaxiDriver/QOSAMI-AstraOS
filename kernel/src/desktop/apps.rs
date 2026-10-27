@@ -66,7 +66,7 @@ const APP_REGISTRY: [AppDesc; NUM_APPS] = [
     AppDesc {
         label: "About",
         icon_sub: "Info",
-        desc: "About SAMNAM OS",
+        desc: "About QOSAMI OS",
         make: || Box::new(AboutApp::new()),
     },
     AppDesc {

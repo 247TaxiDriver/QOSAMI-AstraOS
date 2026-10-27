@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — IPv4
+// QOSAMI Core — IPv4
 //
 // Minimal IPv4: parse headers, build headers, checksum.
 //

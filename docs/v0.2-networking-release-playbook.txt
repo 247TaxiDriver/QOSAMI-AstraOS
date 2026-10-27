@@ -1,4 +1,4 @@
-SAMNAM OS v0.2 Networking Release Playbook (historical AstraOS project name)
+QOSAMI OS v0.2 Networking Release Playbook (historical AstraOS/SAMNAM project names)
 Created: 2026-06-01
 
 Purpose

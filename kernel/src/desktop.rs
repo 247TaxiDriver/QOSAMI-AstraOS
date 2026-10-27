@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// SAMNAM OS — Desktop Compositor  (v3 — App-trait windowing)
+// QOSAMI OS — Desktop Compositor  (v3 — App-trait windowing)
 //
 // Manages:
 //   - Taskbar (top)
