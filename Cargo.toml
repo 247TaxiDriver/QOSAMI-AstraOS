@@ -3,7 +3,7 @@ members = ["kernel"]
 resolver = "2"
 
 [workspace.package]
-edition = "2021"
+edition = "2026"
 license = "Proprietary"
 version = "0.3.0-dev"
 

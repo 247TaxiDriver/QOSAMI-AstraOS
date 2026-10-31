@@ -1,12 +1,12 @@
-# Astra OS
+#QOSami Toura Astra OS
 
 A from-scratch desktop operating system written entirely in Rust — `no_std`, bare-metal x86_64 — with a graphical desktop, real filesystem persistence, user processes, and a growing set of built-in apps.
 
-> **Astra OS is a from-scratch Rust-first desktop OS prototype focused on control, privacy, and simplicity.**
+> **QOSami Toura Astra OS is a from-scratch Rust-first desktop OS prototype focused on control, privacy, and simplicity.**
 
 ---
 
-## Features
+## QOSami Toura Features
 
 | Feature | Status |
 |---|---|
